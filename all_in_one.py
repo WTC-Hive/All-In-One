@@ -2,47 +2,48 @@
 def get_date_of_birth(id_number: str) -> str:
     """
     STEP 2: Extract the date of birth from the ID number and return it as a string
-    return format: DD/MM/YY:
+    return format: DD/MM/YY: 990510 648 3987
     """
-    pass
+    return f"{id_number[4:6]}/{id_number[2:4]}/{id_number[:2]}"
 
 # Question 2
 def get_gender(id_number: str) -> str:
     """
     STEP 3: Extract the gender from the ID number using the formula below and return
     it as a string
-
     Formula: 1 if the ID number's 7th to 10th digit is less than 5000, the person is
     female and if it is greater than 4999, the person is male.
     """
-    pass
+    return "Female" if int(id_number[6]) < 5 else "Male"
 
 # Question 3
+def fizzbuzz(n: int) -> None:
     """
-    Fizzbuzz is a programme that prints the numbers from 1 to n, 
-    but for multiples of 3, it prints "Fizz" instead of the number, 
-    and for multiples of 5, it prints "Buzz" instead of the number. 
+    Fizzbuzz is a programme that prints the numbers from 1 to n,
+    but for multiples of 3, it prints "Fizz" instead of the number,
+    and for multiples of 5, it prints "Buzz" instead of the number.
     For numbers that are multiples of both 3 and 5, it prints "FizzBuzz.
-
     TODO: define a function called fizzbuzz and implement the fucntionality above.
     """
-
+    for i in range(1, n + 1):
+        if i % 3 == 0 and i % 5 == 0: print("FizzBuzz")
+        elif i % 5 == 0: print("Buzz")
+        elif i % 3 == 0: print("Fizz")
+        else: print(i)
 
 # Question 4
-def find_even_numbers(numbers):
+def find_even_numbers(numbers: list) -> tuple:
     """Find the even numbers in the list 'numbers' and return them in
     in a tuple
-
     Hint: use modulus (%)"""
-    pass
+    return tuple([number for number in numbers if number % 2 == 0])
 
 # Question 5
 def find_odd_numbers(numbers):
     """Find the odd numbers in the list 'numbers' and return them in
     in a tuple
-
     Hint: use modulus (%)"""
-    pass
+    return tuple([number for number in numbers if number % 2 == 1])
 
 # Question 6
 def return_list_stats(numbers):
